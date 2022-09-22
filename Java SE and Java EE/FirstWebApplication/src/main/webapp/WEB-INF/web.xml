@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="5.0">
+  <servlet>
+    <description>First servlet made by Ozan Doruk YAVUZ at 25/07/2022.</description>
+    <display-name>FirstServlet</display-name>
+    <servlet-name>FirstServlet</servlet-name>
+    <servlet-class>FirstServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FirstServlet</servlet-name>
+    <url-pattern>/FirstServlet</url-pattern>
+  </servlet-mapping>
+  <display-name>FirstWebApplication</display-name>
+  <servlet>
+    <description></description>
+    <display-name>paramServlet</display-name>
+    <servlet-name>paramServlet</servlet-name>
+    <servlet-class>paramServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>paramServlet</servlet-name>
+    <url-pattern>/paramServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DestinationServlet</display-name>
+    <servlet-name>DestinationServlet</servlet-name>
+    <servlet-class>DestinationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DestinationServlet</servlet-name>
+    <url-pattern>/DestinationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SourceServlet</display-name>
+    <servlet-name>SourceServlet</servlet-name>
+    <servlet-class>SourceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SourceServlet</servlet-name>
+    <url-pattern>/SourceServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <servlet>
+    <servlet-name>directingInsideWeb</servlet-name>
+    <servlet-class>directingInsideWeb</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>directingInsideWeb</servlet-name>
+    <url-pattern>/directingInsideWeb</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  
+  
+  
+    <description></description>
+    <display-name>InitTester</display-name>
+    <servlet-name>InitTester</servlet-name>
+    <servlet-class>InitTester</servlet-class>
+    <init-param>
+      <param-name>User</param-name>
+      <param-value>UsersShallNotPass</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InitTester</servlet-name>
+    <url-pattern>/InitTester</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PathFinder</display-name>
+    <servlet-name>PathFinder</servlet-name>
+    <servlet-class>PathFinder</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PathFinder</servlet-name>
+    <url-pattern>/PathFinder/secured</url-pattern>
+  </servlet-mapping>
+  
+  	<security-constraint>
+		<web-resource-collection>
+			<url-pattern>/directingInsideWeb</url-pattern>
+			<http-method>GET</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>administrator</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>BASIC</auth-method>
+	</login-config>
+  
+  
+</web-app>
